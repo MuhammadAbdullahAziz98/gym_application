@@ -27,6 +27,23 @@ coverage run manage.py test
 
 coverage report
 
+# Register using:
+
+localhost:8000/core/register/
+
+####Example request:
+{
+    "email": "",
+    "password": "",
+    "password2": "",
+    "first_name": "",
+    "last_name": "",
+    "username": ""
+}
+
+## Swagger docs available at:
+http://localhost:8000/swagger/
+
 ## Run docker image using:
 
 DOCKER_BUILDKIT=0  docker build . -t docker-gym-app
