@@ -31,7 +31,8 @@ coverage report
 
 localhost:8000/core/register/
 
-####Example request:
+#### Example request:
+
 {
     "email": "",
     "password": "",
