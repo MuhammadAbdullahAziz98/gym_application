@@ -6,6 +6,7 @@ A python django based rest API for athletes to manage their daily calories at th
 pipenv install
 
 ## run virtual environment:
+pip install pipenv
 pipenv shell
 
 ## run the app:
