@@ -97,7 +97,10 @@ http://localhost:8000/athlete/exercise/
 ```
 DOCKER_BUILDKIT=0  docker build . -t docker-gym-app
 
-docker run docker-gym-app
+docker compose build
+
+docker compose up
+
 ```
 
 (SQL connection is missing in with the docker image)
