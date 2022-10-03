@@ -5,7 +5,7 @@ A python django based rest API for athletes to manage their daily calories at th
 
 pipenv install
 
-## run pipenv:
+## run virtual environment:
 pipenv shell
 
 ## run the app:
@@ -59,6 +59,20 @@ http://localhost:8000/swagger/
 
 ## Open API specifications:
 http://localhost:8000/redoc/
+
+# Example API call to get calories burnt per day (authentication implemented):
+http://localhost:8000/athlete/calories-consumed?start_date=2022-09-29&end_date=2022-10-05
+
+^ for using above API call you need to first add equipment (via POST call), then add exercise using that equipment (post API call), then perform exercise using following POSt API call:
+http://localhost:8000/athlete/exercise/
+
+#### Example request body:
+
+{
+  "exercise_date": "2022-10-03",
+  "athlete": 1,
+  "exercise": 1
+}
 
 ## Run docker image using:
 
