@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure--@q(%%4g401e27rsy0d0v&ivnryv0qw34%eve$c49tp%njypt)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -86,13 +86,16 @@ WSGI_APPLICATION = 'gym_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+print("server")
+print(config('POSTGRES_HOST'))
+
 DATABASES = {
     "default": {
         'ENGINE':'django.db.backends.postgresql_psycopg2',
-        'NAME':config('DBNAME'),
-        'USER':config('DBUSER'),
-        'PASSWORD':config('DBPASS'),
-        'HOST': config('DBHOST'),
+        'NAME':config('POSTGRES_NAME'),
+        'USER':config('POSTGRES_USER'),
+        'PASSWORD':config('POSTGRES_PASSWORD'),
+        'HOST': config('POSTGRES_HOST'),
         'PORT':'5432',        
     }
 }

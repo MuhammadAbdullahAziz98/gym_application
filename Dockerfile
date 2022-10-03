@@ -1,26 +1,15 @@
 FROM python:3.8.9
+# Set environment variables
+ENV PIP_DISABLE_PIP_VERSION_CHECK 1
 ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1  
+ENV PYTHONUNBUFFERED 1
+
 # Set work directory
+WORKDIR /code
 
 # Install dependencies
-RUN pip install --upgrade pip
-COPY requirements.txt /tmp/requirements.txt
-RUN python -m pip install -r /tmp/requirements.txt
+COPY ./requirements.txt .
+RUN pip install -r requirements.txt
 
-EXPOSE 8000 
-
-# Remove "pipenv run", add the bind argument
-# (No need to repeat `command:` in `docker-compose.yml`)
-# setup environment variable  
-ENV DockerHOME=/home/app/webapp  
-
-# set work directory  
-RUN mkdir -p $DockerHOME  
-
-# where your code lives  
-WORKDIR $DockerHOME  
-COPY . $DockerHOME  
-
-
-CMD python manage.py runserver 0.0.0.0:8000
+# Copy project
+COPY . .
