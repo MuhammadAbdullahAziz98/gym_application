@@ -52,7 +52,7 @@ localhost:8000/core/register/
 ## Login Via:
 http://localhost:8000/accounts/login
 
-## Get JWT Token (to use with postman etc) Via
+## Get JWT Token (to use with postman etc) Via:
 http://localhost:8000/api/token/
 
 ## Swagger docs available at:
