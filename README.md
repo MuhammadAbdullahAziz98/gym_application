@@ -103,4 +103,3 @@ docker compose up
 
 ```
 
-(SQL connection is missing in with the docker image)
