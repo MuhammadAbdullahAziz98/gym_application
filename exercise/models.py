@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 from core.models import BaseTimeStampedModel
 # Create your models here.
@@ -18,5 +19,6 @@ class Exercise(BaseTimeStampedModel):
     name=models.CharField(max_length=100)
     description=models.CharField(max_length=1000)
     calories_burnt=models.IntegerField()
+    duration = models.IntegerField(default=0)
     equipment=models.OneToOneField(Equipment, related_name="equipment", on_delete=models.CASCADE)
 
