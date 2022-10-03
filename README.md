@@ -13,7 +13,7 @@ python manage.py runserver
 
 check example .env file (.env.example) for setting up database (postgreSQL used)
 
-# Run migrations:
+## Run migrations:
 
 python manage.py makemigrations
 
@@ -27,7 +27,13 @@ coverage run manage.py test
 
 coverage report
 
-# Register using:
+## To make super user / admin user:
+python manage.py createsuperuser
+
+## access admin panel via:
+http://localhost:8000/admin/
+
+## Register using:
 
 localhost:8000/core/register/
 
@@ -42,8 +48,17 @@ localhost:8000/core/register/
     "username": ""
 }
 
+## Login Via:
+http://localhost:8000/accounts/login
+
+## Get JWT Token (to use with postman etc) Via
+http://localhost:8000/api/token/
+
 ## Swagger docs available at:
 http://localhost:8000/swagger/
+
+## Open API specifications:
+http://localhost:8000/redoc/
 
 ## Run docker image using:
 
